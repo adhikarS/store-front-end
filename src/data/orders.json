@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "customerName": "John Doe",
+    "items": ["Pizza", "Soda"],
+    "total": 24.99,
+    "status": "Pending"
+  },
+  {
+    "id": 2,
+    "customerName": "Jane Smith",
+    "items": ["Burger", "Fries", "Shake"],
+    "total": 15.99,
+    "status": "Completed"
+  }
+]
