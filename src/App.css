@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+
+/* New styles for order statuses */
+.order-item {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.status-pending {
+  background-color: #ffecb3;
+}
+
+.status-in-progress {
+  background-color: #b3e5fc;
+}
+
+.status-ready-for-pickup {
+  background-color: #c8e6c9;
+}
+
+.status-completed {
+  background-color: #dcedc8;
+}

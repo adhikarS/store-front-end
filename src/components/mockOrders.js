@@ -1,4 +1,3 @@
-// mockOrders.js
 const mockOrders = [
   {
     orderNumber: '001',
@@ -14,7 +13,8 @@ const mockOrders = [
     totalPrice: '12.50',
     status: 'completed'
   },
-  // Add more orders as needed
+  // Add more orders with different statuses
+  // ...
 ];
 
 export default mockOrders;

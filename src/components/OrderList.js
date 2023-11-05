@@ -1,28 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import mockOrders from './mockOrders'; // Make sure this path is correct
 
-const OrderList = () => {
-  const [orders, setOrders] = useState([]);
+const OrderList = ({ statusFilter }) => {
+  // Directly use mockOrders as the state
+  const [orders] = React.useState(mockOrders);
 
-  useEffect(() => {
-    const fetchOrders = async () => {
-      const response = await fetch('/data/orders.json'); // Adjust if your path is different
-      const data = await response.json();
-      setOrders(data);
-    };
-
-    fetchOrders().catch(console.error);
-  }, []);
+  // Filter orders based on the statusFilter prop
+  const filteredOrders = statusFilter === 'all' ? orders : orders.filter(order => order.status === statusFilter);
 
   return (
     <div>
       <h2>Order List</h2>
       <ul>
-        {orders.map(order => (
-          <li key={order.id}>
-            Order #{order.id}: {order.customerName} - Total: ${order.total} - Status: {order.status}
+        {filteredOrders.map((order, index) => (
+          // Add className to li element
+          <li key={index} className={`order-item status-${order.status.replace(/\s+/g, '-').toLowerCase()}`}>
+            Order #{order.orderNumber}: {order.customerName} - Total: ${order.totalPrice} - Status: {order.status}
             <ul>
-              {order.items.map((item, index) => (
-                <li key={index}>{item}</li>
+              {order.items.map((item, itemIndex) => (
+                <li key={itemIndex}>{item}</li>
               ))}
             </ul>
           </li>
