@@ -1,0 +1,60 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  position: relative; /* Ensure the navbar is positioned relative to its normal position */
+}
+
+.logo {
+  /* Add logo styling here */
+}
+
+.hamburger {
+  display: block;
+  cursor: pointer;
+  position: absolute; /* Keep the hamburger in place */
+  top: 1rem; /* Adjust as necessary */
+  right: 1rem; /* Adjust as necessary */
+  z-index: 1000; /* Ensures it's above other elements */
+  /* additional styling */
+}
+
+.nav-menu {
+  display: none;
+  list-style-type: none;
+  /* additional styling for the menu */
+}
+
+.nav-menu.active {
+  display: block;
+  position: fixed; /* Stick the menu to the top of the viewport */
+  top: 60px; /* Adjust based on the height of your navbar */
+  left: 0;
+  right: 0; /* Stretch across the screen */
+  background-color: #fff; /* Or any color that matches your design */
+  z-index: 999; /* Below the hamburger to allow it to be clickable */
+  /* additional styling */
+}
+
+@media (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+
+  .nav-menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: static; /* Resets the position for larger screens */
+  }
+}
+
+/* Additional styles to add padding to the top of the body content when the nav menu is active */
+body.nav-menu-active {
+  padding-top: 60px; /* Adjust this value to the height of your active nav menu */
+}
+
+body.nav-menu-active {
+  padding-top: 60px; /* Adjust this value to the height of your active nav menu */
+}
